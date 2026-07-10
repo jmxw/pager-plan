@@ -9,11 +9,10 @@ the controller; errors and tech-nouns are referenced by link, never copied. Kept
 The tables below list every endpoint of the CMS API — **9 controllers, 67 endpoints** — extracted
 from the controllers under
 [`app/cms/.../com/xwkj/cms/controller/`](/source/pager-backend/app/cms/src/main/kotlin/com/xwkj/cms/controller).
-All endpoint docs are **to be written**; none exists yet. The **Doc** column names the file each
-endpoint's doc will live in (folder = controller class name without the `Controller` suffix in
-snake_case, file = controller method name in snake_case, per
-[rules/api_docs.md](../../rules/api_docs.md)). When a doc lands, its **Doc** cell becomes a link
-and the controller folder gains its own `README.md` endpoint list in the same PR.
+All endpoint docs now exist — the **Doc** column links to each (folder = controller class name
+without the `Controller` suffix in snake_case, file = controller method name in snake_case, per
+[rules/api_docs.md](../../rules/api_docs.md)). Each controller folder also carries its own
+`README.md` endpoint list.
 
 Reading the tables:
 
@@ -35,10 +34,10 @@ Source: [`AccessKeyController.kt`](/source/pager-backend/app/cms/src/main/kotlin
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `access_key/get_access_keys.md` | GET | `/v1/access_key` | `ACCESS_KEY_READ` | — |
-| `access_key/add_access_key.md` | POST | `/v1/access_key` | `ACCESS_KEY_WRITE` | — |
-| `access_key/edit_access_key.md` | PUT | `/v1/access_key/{accessKeyId}` | N/A (authenticated) | — |
-| `access_key/delete_access_key.md` | DELETE | `/v1/access_key/{accessKeyId}` | `ACCESS_KEY_WRITE` | — |
+| [`access_key/get_access_keys.md`](/doc/api/access_key/get_access_keys.md) | GET | `/v1/access_key` | `ACCESS_KEY_READ` | — |
+| [`access_key/add_access_key.md`](/doc/api/access_key/add_access_key.md) | POST | `/v1/access_key` | `ACCESS_KEY_WRITE` | — |
+| [`access_key/edit_access_key.md`](/doc/api/access_key/edit_access_key.md) | PUT | `/v1/access_key/{accessKeyId}` | N/A (authenticated) | — |
+| [`access_key/delete_access_key.md`](/doc/api/access_key/delete_access_key.md) | DELETE | `/v1/access_key/{accessKeyId}` | `ACCESS_KEY_WRITE` | — |
 
 ### `ArticleController` → `article/`
 
@@ -46,12 +45,12 @@ Source: [`ArticleController.kt`](/source/pager-backend/app/cms/src/main/kotlin/c
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `article/search_articles.md` | POST | `/v1/article/search` | `ARTICLE_READ` | Search articles in a project. |
-| `article/add_article.md` | POST | `/v1/article` | `ARTICLE_WRITE` | Add a new article into a project. |
-| `article/get_article.md` | GET | `/v1/article/{articleId}` | `ARTICLE_READ` | Get detail information of an article. |
-| `article/edit_article.md` | PUT | `/v1/article/{articleId}` | `ARTICLE_WRITE` | Edit detail information of an article. |
-| `article/delete_article.md` | DELETE | `/v1/article/{articleId}` | `ARTICLE_WRITE` | Delete an article. |
-| `article/upload_article_cover.md` | POST | `/v1/article/{articleId}/cover` | `ARTICLE_WRITE` | Upload cover image for an article. |
+| [`article/search_articles.md`](/doc/api/article/search_articles.md) | POST | `/v1/article/search` | `ARTICLE_READ` | Search articles in a project. |
+| [`article/add_article.md`](/doc/api/article/add_article.md) | POST | `/v1/article` | `ARTICLE_WRITE` | Add a new article into a project. |
+| [`article/get_article.md`](/doc/api/article/get_article.md) | GET | `/v1/article/{articleId}` | `ARTICLE_READ` | Get detail information of an article. |
+| [`article/edit_article.md`](/doc/api/article/edit_article.md) | PUT | `/v1/article/{articleId}` | `ARTICLE_WRITE` | Edit detail information of an article. |
+| [`article/delete_article.md`](/doc/api/article/delete_article.md) | DELETE | `/v1/article/{articleId}` | `ARTICLE_WRITE` | Delete an article. |
+| [`article/upload_article_cover.md`](/doc/api/article/upload_article_cover.md) | POST | `/v1/article/{articleId}/cover` | `ARTICLE_WRITE` | Upload cover image for an article. |
 
 ### `ArticleListController` → `article_list/`
 
@@ -59,14 +58,14 @@ Source: [`ArticleListController.kt`](/source/pager-backend/app/cms/src/main/kotl
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `article_list/search_article_lists.md` | POST | `/v1/article_list/search` | `ARTICLE_READ` | Search article lists in a project. |
-| `article_list/add_article_list.md` | POST | `/v1/article_list` | `ARTICLE_LIST_WRITE` | Add a new article list into a project. |
-| `article_list/edit_article_list.md` | PUT | `/v1/article_list/{articleListId}` | `ARTICLE_LIST_WRITE` | Edit an article list. |
-| `article_list/delete_article_list.md` | DELETE | `/v1/article_list/{articleListId}` | `ARTICLE_LIST_WRITE` | Delete an article list. |
-| `article_list/get_article_list.md` | GET | `/v1/article_list/{articleListId}` | `ARTICLE_LIST_READ` | Get detail information of an article list. |
-| `article_list/get_article_list_items.md` | POST | `/v1/article_list/{articleListId}/items` | `ARTICLE_LIST_READ` | Get all items of an article list. |
-| `article_list/add_article_to_list.md` | PATCH | `/v1/article_list/{articleListId}/article/{articleId}` | `ARTICLE_LIST_WRITE` | Add an existing article into an article list. |
-| `article_list/delete_article_from_list.md` | DELETE | `/v1/article_list/{articleListId}/article/{articleId}` | `ARTICLE_LIST_WRITE` | Delete and article from an article list. |
+| [`article_list/search_article_lists.md`](/doc/api/article_list/search_article_lists.md) | POST | `/v1/article_list/search` | `ARTICLE_READ` | Search article lists in a project. |
+| [`article_list/add_article_list.md`](/doc/api/article_list/add_article_list.md) | POST | `/v1/article_list` | `ARTICLE_LIST_WRITE` | Add a new article list into a project. |
+| [`article_list/edit_article_list.md`](/doc/api/article_list/edit_article_list.md) | PUT | `/v1/article_list/{articleListId}` | `ARTICLE_LIST_WRITE` | Edit an article list. |
+| [`article_list/delete_article_list.md`](/doc/api/article_list/delete_article_list.md) | DELETE | `/v1/article_list/{articleListId}` | `ARTICLE_LIST_WRITE` | Delete an article list. |
+| [`article_list/get_article_list.md`](/doc/api/article_list/get_article_list.md) | GET | `/v1/article_list/{articleListId}` | `ARTICLE_LIST_READ` | Get detail information of an article list. |
+| [`article_list/get_article_list_items.md`](/doc/api/article_list/get_article_list_items.md) | POST | `/v1/article_list/{articleListId}/items` | `ARTICLE_LIST_READ` | Get all items of an article list. |
+| [`article_list/add_article_to_list.md`](/doc/api/article_list/add_article_to_list.md) | PATCH | `/v1/article_list/{articleListId}/article/{articleId}` | `ARTICLE_LIST_WRITE` | Add an existing article into an article list. |
+| [`article_list/delete_article_from_list.md`](/doc/api/article_list/delete_article_from_list.md) | DELETE | `/v1/article_list/{articleListId}/article/{articleId}` | `ARTICLE_LIST_WRITE` | Delete and article from an article list. |
 
 ### `LabelController` → `label/`
 
@@ -76,12 +75,12 @@ All six endpoints are stubs — the controller has no service injected yet.
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `label/add_label.md` † | POST | `/v1/label` | `LABEL_WRITE` | — |
-| `label/get_label.md` † | GET | `/v1/label/{labelId}` | `LABEL_READ` | — |
-| `label/edit_label.md` † | PUT | `/v1/label/{labelId}` | `LABEL_WRITE` | — |
-| `label/delete_label.md` † | DELETE | `/v1/label/{labelId}` | `LABEL_WRITE` | — |
-| `label/add_or_update_label_content.md` † | POST | `/v1/label/{labelId}/content/{languageType}` | `LABEL_WRITE` | — |
-| `label/delete_label_content.md` † | DELETE | `/v1/label/{labelId}/content/{languageType}` | `LABEL_WRITE` | — |
+| [`label/add_label.md`](/doc/api/label/add_label.md) † | POST | `/v1/label` | `LABEL_WRITE` | — |
+| [`label/get_label.md`](/doc/api/label/get_label.md) † | GET | `/v1/label/{labelId}` | `LABEL_READ` | — |
+| [`label/edit_label.md`](/doc/api/label/edit_label.md) † | PUT | `/v1/label/{labelId}` | `LABEL_WRITE` | — |
+| [`label/delete_label.md`](/doc/api/label/delete_label.md) † | DELETE | `/v1/label/{labelId}` | `LABEL_WRITE` | — |
+| [`label/add_or_update_label_content.md`](/doc/api/label/add_or_update_label_content.md) † | POST | `/v1/label/{labelId}/content/{languageType}` | `LABEL_WRITE` | — |
+| [`label/delete_label_content.md`](/doc/api/label/delete_label_content.md) † | DELETE | `/v1/label/{labelId}/content/{languageType}` | `LABEL_WRITE` | — |
 
 ### `NavigationController` → `navigation/`
 
@@ -89,14 +88,14 @@ Source: [`NavigationController.kt`](/source/pager-backend/app/cms/src/main/kotli
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `navigation/get_navigation.md` † | GET | `/v1/navigation/{navigationId}` | `PROJECT_DEV` | Get detail information of a navigation menu. |
-| `navigation/add_navigation_list.md` | POST | `/v1/navigation/{navigationId}/list` | `PROJECT_DEV` | Add a new list type navigation menu to a parent navigation menu. |
-| `navigation/add_navigation_article.md` | POST | `/v1/navigation/{navigationId}/article` | `PROJECT_DEV` | Add a new article type navigation menu to a parent navigation menu. |
-| `navigation/get_navigation_children.md` | GET | `/v1/navigation/{navigationId}/children` | `PROJECT_DEV` | Get project, parent navigations, children navigations and the navigation itself. |
-| `navigation/move_navigation.md` † | PATCH | `/v1/navigation/{navigationId}/move_to/{targetNavigationId}` | `PROJECT_DEV` | Move a navigation menu as a child of an other parent navigation menu. |
-| `navigation/move_up.md` | PATCH | `/v1/navigation/{navigationId}/up` | `PROJECT_DEV` | Move navigation menu up |
-| `navigation/move_down.md` | PATCH | `/v1/navigation/{navigationId}/down` | `PROJECT_DEV` | Move navigation menu down |
-| `navigation/delete_navigation.md` | DELETE | `/v1/navigation/{navigationId}` | `PROJECT_DEV` | Delete a navigation menu. |
+| [`navigation/get_navigation.md`](/doc/api/navigation/get_navigation.md) † | GET | `/v1/navigation/{navigationId}` | `PROJECT_DEV` | Get detail information of a navigation menu. |
+| [`navigation/add_navigation_list.md`](/doc/api/navigation/add_navigation_list.md) | POST | `/v1/navigation/{navigationId}/list` | `PROJECT_DEV` | Add a new list type navigation menu to a parent navigation menu. |
+| [`navigation/add_navigation_article.md`](/doc/api/navigation/add_navigation_article.md) | POST | `/v1/navigation/{navigationId}/article` | `PROJECT_DEV` | Add a new article type navigation menu to a parent navigation menu. |
+| [`navigation/get_navigation_children.md`](/doc/api/navigation/get_navigation_children.md) | GET | `/v1/navigation/{navigationId}/children` | `PROJECT_DEV` | Get project, parent navigations, children navigations and the navigation itself. |
+| [`navigation/move_navigation.md`](/doc/api/navigation/move_navigation.md) † | PATCH | `/v1/navigation/{navigationId}/move_to/{targetNavigationId}` | `PROJECT_DEV` | Move a navigation menu as a child of an other parent navigation menu. |
+| [`navigation/move_up.md`](/doc/api/navigation/move_up.md) | PATCH | `/v1/navigation/{navigationId}/up` | `PROJECT_DEV` | Move navigation menu up |
+| [`navigation/move_down.md`](/doc/api/navigation/move_down.md) | PATCH | `/v1/navigation/{navigationId}/down` | `PROJECT_DEV` | Move navigation menu down |
+| [`navigation/delete_navigation.md`](/doc/api/navigation/delete_navigation.md) | DELETE | `/v1/navigation/{navigationId}` | `PROJECT_DEV` | Delete a navigation menu. |
 
 ### `OrganizationController` → `organization/`
 
@@ -104,7 +103,7 @@ Source: [`OrganizationController.kt`](/source/pager-backend/app/cms/src/main/kot
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `organization/register.md` | POST | `/v1/organization/register` | N/A (public) | — |
+| [`organization/register.md`](/doc/api/organization/register.md) | POST | `/v1/organization/register` | N/A (public) | — |
 
 ### `ProjectController` → `project/`
 
@@ -112,20 +111,20 @@ Source: [`ProjectController.kt`](/source/pager-backend/app/cms/src/main/kotlin/c
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `project/get_projects.md` | GET | `/v1/project` | `PROJECT_READ` | Get all projects of an organization. |
-| `project/add_project.md` | POST | `/v1/project` | `PROJECT_WRITE` | — |
-| `project/get_project_available_regions.md` | GET | `/v1/project/regions` | `PROJECT_READ` | — |
-| `project/get_project_available_language_types.md` | GET | `/v1/project/language_types` | `PROJECT_READ` | — |
-| `project/get_project.md` | GET | `/v1/project/{projectId}` | `PROJECT_READ` | — |
-| `project/edit_project.md` | PUT | `/v1/project/{projectId}` | `PROJECT_WRITE` | — |
-| `project/delete_project.md` | DELETE | `/v1/project/{projectId}` | `PROJECT_WRITE` | — |
-| `project/get_project_languages.md` | GET | `/v1/project/{projectId}/language` | `PROJECT_READ` | — |
-| `project/add_project_language.md` | POST | `/v1/project/{projectId}/language` | `PROJECT_WRITE` | — |
-| `project/upload_zip.md` | POST | `/v1/project/{projectId}/upload_zip` | `PROJECT_WRITE` | — |
-| `project/reset.md` | PATCH | `/v1/project/{projectId}/reset` | `PROJECT_WRITE` | — |
-| `project/clear_project_recycle_bin.md` | PATCH | `/v1/project/{projectId}/clear_recycle_bin` | `PROJECT_DEV` | — |
-| `project/deploy.md` | PATCH | `/v1/project/{projectId}/deploy/{phase}` | `PROJECT_DEPLOY` | — |
-| `project/force_deploy.md` | PATCH | `/v1/project/{projectId}/force_deploy/{phase}` | N/A (authenticated) | — |
+| [`project/get_projects.md`](/doc/api/project/get_projects.md) | GET | `/v1/project` | `PROJECT_READ` | Get all projects of an organization. |
+| [`project/add_project.md`](/doc/api/project/add_project.md) | POST | `/v1/project` | `PROJECT_WRITE` | — |
+| [`project/get_project_available_regions.md`](/doc/api/project/get_project_available_regions.md) | GET | `/v1/project/regions` | `PROJECT_READ` | — |
+| [`project/get_project_available_language_types.md`](/doc/api/project/get_project_available_language_types.md) | GET | `/v1/project/language_types` | `PROJECT_READ` | — |
+| [`project/get_project.md`](/doc/api/project/get_project.md) | GET | `/v1/project/{projectId}` | `PROJECT_READ` | — |
+| [`project/edit_project.md`](/doc/api/project/edit_project.md) | PUT | `/v1/project/{projectId}` | `PROJECT_WRITE` | — |
+| [`project/delete_project.md`](/doc/api/project/delete_project.md) | DELETE | `/v1/project/{projectId}` | `PROJECT_WRITE` | — |
+| [`project/get_project_languages.md`](/doc/api/project/get_project_languages.md) | GET | `/v1/project/{projectId}/language` | `PROJECT_READ` | — |
+| [`project/add_project_language.md`](/doc/api/project/add_project_language.md) | POST | `/v1/project/{projectId}/language` | `PROJECT_WRITE` | — |
+| [`project/upload_zip.md`](/doc/api/project/upload_zip.md) | POST | `/v1/project/{projectId}/upload_zip` | `PROJECT_WRITE` | — |
+| [`project/reset.md`](/doc/api/project/reset.md) | PATCH | `/v1/project/{projectId}/reset` | `PROJECT_WRITE` | — |
+| [`project/clear_project_recycle_bin.md`](/doc/api/project/clear_project_recycle_bin.md) | PATCH | `/v1/project/{projectId}/clear_recycle_bin` | `PROJECT_DEV` | — |
+| [`project/deploy.md`](/doc/api/project/deploy.md) | PATCH | `/v1/project/{projectId}/deploy/{phase}` | `PROJECT_DEPLOY` | — |
+| [`project/force_deploy.md`](/doc/api/project/force_deploy.md) | PATCH | `/v1/project/{projectId}/force_deploy/{phase}` | N/A (authenticated) | — |
 
 ### `TemplateController` → `template/`
 
@@ -133,16 +132,16 @@ Source: [`TemplateController.kt`](/source/pager-backend/app/cms/src/main/kotlin/
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `template/move_template_to_recycle_bin.md` | DELETE | `/v1/template/{templateId}` | `PROJECT_DEV` | Move a template to recycle bin. |
-| `template/add_template.md` | POST | `/v1/template/{templateId}/add` | `PROJECT_DEV` | Add a new template to a parent template. |
-| `template/upload_template.md` | POST | `/v1/template/{templateId}/upload` | `PROJECT_DEV` | Upload a new template file to a parent template. |
-| `template/read_directory.md` | GET | `/v1/template/{templateId}/directory` | `PROJECT_DEV` | Get project, parent templates, child templates and the template it self. |
-| `template/read_file_content.md` | GET | `/v1/template/{templateId}/content` | `PROJECT_DEV` | Get the text content of a text template file. |
-| `template/write_file_content.md` | PATCH | `/v1/template/{templateId}/content` | `PROJECT_DEV` | Update the text content of a text template file. |
-| `template/get_binary_template_presigned_url.md` | GET | `/v1/template/{templateId}/binary` | `PROJECT_DEV` | Get url of a binary template file. |
-| `template/rename_template.md` | PATCH | `/v1/template/{templateId}/rename` | `PROJECT_DEV` | Rename a template. |
-| `template/copy_template.md` | PATCH | `/v1/template/{templateId}/copy_to/{targetTemplateId}` | `PROJECT_DEV` | Copy a template and its children as a child of the target template. |
-| `template/move_template.md` | PATCH | `/v1/template/{templateId}/move_to/{targetTemplateId}` | `PROJECT_DEV` | Move a template and its children as a child of the target template. |
+| [`template/move_template_to_recycle_bin.md`](/doc/api/template/move_template_to_recycle_bin.md) | DELETE | `/v1/template/{templateId}` | `PROJECT_DEV` | Move a template to recycle bin. |
+| [`template/add_template.md`](/doc/api/template/add_template.md) | POST | `/v1/template/{templateId}/add` | `PROJECT_DEV` | Add a new template to a parent template. |
+| [`template/upload_template.md`](/doc/api/template/upload_template.md) | POST | `/v1/template/{templateId}/upload` | `PROJECT_DEV` | Upload a new template file to a parent template. |
+| [`template/read_directory.md`](/doc/api/template/read_directory.md) | GET | `/v1/template/{templateId}/directory` | `PROJECT_DEV` | Get project, parent templates, child templates and the template it self. |
+| [`template/read_file_content.md`](/doc/api/template/read_file_content.md) | GET | `/v1/template/{templateId}/content` | `PROJECT_DEV` | Get the text content of a text template file. |
+| [`template/write_file_content.md`](/doc/api/template/write_file_content.md) | PATCH | `/v1/template/{templateId}/content` | `PROJECT_DEV` | Update the text content of a text template file. |
+| [`template/get_binary_template_presigned_url.md`](/doc/api/template/get_binary_template_presigned_url.md) | GET | `/v1/template/{templateId}/binary` | `PROJECT_DEV` | Get url of a binary template file. |
+| [`template/rename_template.md`](/doc/api/template/rename_template.md) | PATCH | `/v1/template/{templateId}/rename` | `PROJECT_DEV` | Rename a template. |
+| [`template/copy_template.md`](/doc/api/template/copy_template.md) | PATCH | `/v1/template/{templateId}/copy_to/{targetTemplateId}` | `PROJECT_DEV` | Copy a template and its children as a child of the target template. |
+| [`template/move_template.md`](/doc/api/template/move_template.md) | PATCH | `/v1/template/{templateId}/move_to/{targetTemplateId}` | `PROJECT_DEV` | Move a template and its children as a child of the target template. |
 
 ### `UserController` → `user/`
 
@@ -150,16 +149,16 @@ Source: [`UserController.kt`](/source/pager-backend/app/cms/src/main/kotlin/com/
 
 | Doc | Method | Path | Permission | Summary |
 | --- | --- | --- | --- | --- |
-| `user/login.md` | POST | `/v1/user/login` | N/A (public) | User login |
-| `user/logout.md` | GET | `/v1/user/logout` | N/A (authenticated) | User logout |
-| `user/get_users.md` | GET | `/v1/user` | `USER_READ` | Get all visible users of an organization. |
-| `user/get_available_roles.md` | GET | `/v1/user/roles` | `USER_READ` | Get all available user roles. |
-| `user/add_admin.md` | POST | `/v1/user/admin` | `ADMIN_WRITE` | Add an admin user. |
-| `user/add_developer.md` | POST | `/v1/user/developer` | `USER_WRITE` | Add a developer user. |
-| `user/add_customer.md` | POST | `/v1/user/customer` | `USER_WRITE` | Add a customer user. |
-| `user/get_me.md` | GET | `/v1/user/me` | `USER_READ` | Get user information of the current user. |
-| `user/edit_user.md` † | PATCH | `/v1/user/{userId}` | `USER_WRITE` | Get user information by userId. |
-| `user/delete_user.md` † | DELETE | `/v1/user/{userId}` | `USER_WRITE` | Delete user. |
+| [`user/login.md`](/doc/api/user/login.md) | POST | `/v1/user/login` | N/A (public) | User login |
+| [`user/logout.md`](/doc/api/user/logout.md) | GET | `/v1/user/logout` | N/A (authenticated) | User logout |
+| [`user/get_users.md`](/doc/api/user/get_users.md) | GET | `/v1/user` | `USER_READ` | Get all visible users of an organization. |
+| [`user/get_available_roles.md`](/doc/api/user/get_available_roles.md) | GET | `/v1/user/roles` | `USER_READ` | Get all available user roles. |
+| [`user/add_admin.md`](/doc/api/user/add_admin.md) | POST | `/v1/user/admin` | `ADMIN_WRITE` | Add an admin user. |
+| [`user/add_developer.md`](/doc/api/user/add_developer.md) | POST | `/v1/user/developer` | `USER_WRITE` | Add a developer user. |
+| [`user/add_customer.md`](/doc/api/user/add_customer.md) | POST | `/v1/user/customer` | `USER_WRITE` | Add a customer user. |
+| [`user/get_me.md`](/doc/api/user/get_me.md) | GET | `/v1/user/me` | `USER_READ` | Get user information of the current user. |
+| [`user/edit_user.md`](/doc/api/user/edit_user.md) † | PATCH | `/v1/user/{userId}` | `USER_WRITE` | Get user information by userId. |
+| [`user/delete_user.md`](/doc/api/user/delete_user.md) † | DELETE | `/v1/user/{userId}` | `USER_WRITE` | Delete user. |
 
 Note: the `edit_user` summary is copied verbatim from the source, where it reads like a
 copy-paste leftover ("Get user information by userId."); correcting it belongs to the PR that

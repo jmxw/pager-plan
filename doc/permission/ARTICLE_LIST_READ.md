@@ -15,5 +15,5 @@ reading a single list and paging through its member articles. Held by all four r
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| GET | `/v1/article_list/{articleListId}` | ⬜ [get_article_list.md](/doc/api/article_list/get_article_list.md) |
-| POST | `/v1/article_list/{articleListId}/items` | ⬜ [get_article_list_items.md](/doc/api/article_list/get_article_list_items.md) |
+| GET | `/v1/article_list/{articleListId}` | [get_article_list.md](/doc/api/article_list/get_article_list.md) |
+| POST | `/v1/article_list/{articleListId}/items` | [get_article_list_items.md](/doc/api/article_list/get_article_list_items.md) |

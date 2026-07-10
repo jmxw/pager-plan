@@ -14,4 +14,4 @@ Pager's shared microservices and integrations. Held by OWNER and ADMIN.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| GET | `/v1/access_key` | ⬜ [get_access_keys.md](/doc/api/access_key/get_access_keys.md) |
+| GET | `/v1/access_key` | [get_access_keys.md](/doc/api/access_key/get_access_keys.md) |

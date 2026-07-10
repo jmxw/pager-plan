@@ -15,6 +15,6 @@ and ADMIN, the roles that administer accounts.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| GET | `/v1/user` | ⬜ [get_users.md](/doc/api/user/get_users.md) |
-| GET | `/v1/user/roles` | ⬜ [get_available_roles.md](/doc/api/user/get_available_roles.md) |
-| GET | `/v1/user/me` | ⬜ [get_me.md](/doc/api/user/get_me.md) |
+| GET | `/v1/user` | [get_users.md](/doc/api/user/get_users.md) |
+| GET | `/v1/user/roles` | [get_available_roles.md](/doc/api/user/get_available_roles.md) |
+| GET | `/v1/user/me` | [get_me.md](/doc/api/user/get_me.md) |
