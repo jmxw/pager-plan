@@ -18,7 +18,9 @@ Write `N/A` when the message contains no placeholder.
 
 ## When Returned
 
-<Condition(s) under which this error is returned. Start from the classes in the index's
-"Thrown from" column. Reference the endpoints that can return it by link to their API docs
-(`/doc/api/<controller>/<handler>.md`) and domain terms by link to their Tech Nouns
-(`/doc/tech_noun/...`) — never copy their content.>
+<Condition(s) under which this error is returned. Start from the class(es) in the index's
+"Thrown from" column, linking each to its source through the `/source/pager-backend/...`
+symlink. Name the triggering endpoint(s) by their verbatim `METHOD /path` (link the API doc
+`/doc/api/<controller>/<handler>.md` once it exists — the API doc is the forward reference,
+this doc is its target), and link domain terms to their Tech Nouns (`/doc/tech_noun/...`) on
+first mention — never copy their content.>
