@@ -61,52 +61,52 @@ status).
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `unknown/-9999.md` | -9999 | `UnknownError` | 500 | `CmsExceptionHandler` (fallback for every internal or unhandled exception) | `Unknown error: {}` |
-| `unknown/9998.md` | 9998 | — (hard-coded, no enum constant) | 4xx (Spring's status) | `CmsExceptionHandler.handleExceptionInternal` | — (the Spring exception's own message) |
+| [unknown/-9999.md](unknown/-9999.md) | -9999 | `UnknownError` | 500 | `CmsExceptionHandler` (fallback for every internal or unhandled exception) | `Unknown error: {}` |
+| [unknown/9998.md](unknown/9998.md) | 9998 | — (hard-coded, no enum constant) | 4xx (Spring's status) | `CmsExceptionHandler.handleExceptionInternal` | — (the Spring exception's own message) |
 
 ### Organization (10000) → `organization/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `organization/10001.md` | 10001 | `OrganizationIdNotExist` | 400 | `OrganizationRepository` | `Organization id {} not exist.` |
-| `organization/10002.md` | 10002 | `OrganizationIdentifierExist` | 400 | `OrganizationService` | `Organization identifier {} exist.` |
+| [organization/10001.md](organization/10001.md) | 10001 | `OrganizationIdNotExist` | 400 | `OrganizationRepository` | `Organization id {} not exist.` |
+| [organization/10002.md](organization/10002.md) | 10002 | `OrganizationIdentifierExist` | 400 | `OrganizationService` | `Organization identifier {} exist.` |
 | `organization/10003.md` † | 10003 | `OrganizationIdentifierNotExist` | — | — | `Organization identifier {} not exist.` |
 
 ### User (20000) → `user/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `user/20001.md` | 20001 | `UserIdNotExist` | 400 | `UserRepository`, `PrivilegeComponent` | `User id {} not exist.` |
-| `user/20002.md` | 20002 | `UserNotPermitted` | 400 | `UserPermissionInterceptor` | `User({}) with role {} does not have permission {}.` |
-| `user/20003.md` | 20003 | `UserIdentifierExist` | 400 | `UserService`, `OrganizationService` | `User identifier {} exist.` |
-| `user/20004.md` | 20004 | `UserIdentifierNotExist` | 400 | `UserService` | `User identifier {} not exist.` |
-| `user/20005.md` | 20005 | `UserPasswordWrong` | 400 | `UserService` | `Password is wrong for user {}` |
-| `user/20006.md` | 20006 | `UserMailExist` | 400 | `UserService` | `User mail {} exist in organization {}.` |
+| [user/20001.md](user/20001.md) | 20001 | `UserIdNotExist` | 400 | `UserRepository`, `PrivilegeComponent` | `User id {} not exist.` |
+| [user/20002.md](user/20002.md) | 20002 | `UserNotPermitted` | 400 | `UserPermissionInterceptor` | `User({}) with role {} does not have permission {}.` |
+| [user/20003.md](user/20003.md) | 20003 | `UserIdentifierExist` | 400 | `UserService`, `OrganizationService` | `User identifier {} exist.` |
+| [user/20004.md](user/20004.md) | 20004 | `UserIdentifierNotExist` | 400 | `UserService` | `User identifier {} not exist.` |
+| [user/20005.md](user/20005.md) | 20005 | `UserPasswordWrong` | 400 | `UserService` | `Password is wrong for user {}` |
+| [user/20006.md](user/20006.md) | 20006 | `UserMailExist` | 400 | `UserService` | `User mail {} exist in organization {}.` |
 
 ### Access Key (30000) → `access_key/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `access_key/30001.md` | 30001 | `AccessKeyIdNotExist` | 400 | `AccessKeyRepository` | `Access key id {} not exist.` |
-| `access_key/30002.md` | 30002 | `AccessKeyNotBelongToOrganization` | 400 | `AccessKeyRepository` | `Access key({}) does not belong to organization({})` |
-| `access_key/30003.md` | 30003 | `AccessKeyUsedInProject` | 400 | `AccessKeyService` | `Access key({}) has been used in projects and cannot be deleted.` |
+| [access_key/30001.md](access_key/30001.md) | 30001 | `AccessKeyIdNotExist` | 400 | `AccessKeyRepository` | `Access key id {} not exist.` |
+| [access_key/30002.md](access_key/30002.md) | 30002 | `AccessKeyNotBelongToOrganization` | 400 | `AccessKeyRepository` | `Access key({}) does not belong to organization({})` |
+| [access_key/30003.md](access_key/30003.md) | 30003 | `AccessKeyUsedInProject` | 400 | `AccessKeyService` | `Access key({}) has been used in projects and cannot be deleted.` |
 
 ### Project (40000) → `project/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `project/40001.md` | 40001 | `ProjectIdNotExist` | 400 | `ProjectRepository` | `Project id {} not exist.` |
-| `project/40002.md` | 40002 | `ProjectNoPrivilege` | 400 | `PrivilegeComponent` | `No privilege to access project({})` |
-| `project/40003.md` | 40003 | `ProjectNotBelongToOrganization` | 400 | `ProjectRepository` | `Project({}) does not belong to organization({})` |
-| `project/40004.md` | 40004 | `ProjectIdentifierExist` | 400 | `ProjectService` | `Project identifier {} exist.` |
+| [project/40001.md](project/40001.md) | 40001 | `ProjectIdNotExist` | 400 | `ProjectRepository` | `Project id {} not exist.` |
+| [project/40002.md](project/40002.md) | 40002 | `ProjectNoPrivilege` | 400 | `PrivilegeComponent` | `No privilege to access project({})` |
+| [project/40003.md](project/40003.md) | 40003 | `ProjectNotBelongToOrganization` | 400 | `ProjectRepository` | `Project({}) does not belong to organization({})` |
+| [project/40004.md](project/40004.md) | 40004 | `ProjectIdentifierExist` | 400 | `ProjectService` | `Project identifier {} exist.` |
 | `project/40005.md` † | 40005 | `ProjectIdentifierNotExist` | — | — | `Project identifier {} not exist.` |
-| `project/40006.md` | 40006 | `ProjectBucketExist` | 400 | `ProjectService` | `Project bucket exist with identifier {}.` |
-| `project/40007.md` | 40007 | `ProjectZipSavedError` | 400 | `ProjectService` | `Error to save project zip file for project({}).` |
-| `project/40008.md` | 40008 | `ProjectZipDownloadFailed` | N/A (consumer) | consumer: `ProjectZipHandlerService` | `Error to download project zip for project({}) from {}.` |
-| `project/40009.md` | 40009 | `ProjectZipFileUnzipFailed` | N/A (consumer) | consumer: `ProjectZipHandlerService` | `Error to unzip file for project({})` |
-| `project/40010.md` | 40010 | `ProjectZipUploadReject` | 400 | `ProjectService` | `Reject to upload zip file for project({}), please reset templates!` |
-| `project/40011.md` | 40011 | `ProjectResetReject` | 400 | `ProjectService` | `Project({}) is processing, try to reset later.` |
-| `project/40012.md` | 40012 | `ProjectIsDeploying` | 400 | `DeployService` | `Project({}) is deploying, try to deploy later.` |
+| [project/40006.md](project/40006.md) | 40006 | `ProjectBucketExist` | 400 | `ProjectService` | `Project bucket exist with identifier {}.` |
+| [project/40007.md](project/40007.md) | 40007 | `ProjectZipSavedError` | 400 | `ProjectService` | `Error to save project zip file for project({}).` |
+| [project/40008.md](project/40008.md) | 40008 | `ProjectZipDownloadFailed` | N/A (consumer) | consumer: `ProjectZipHandlerService` | `Error to download project zip for project({}) from {}.` |
+| [project/40009.md](project/40009.md) | 40009 | `ProjectZipFileUnzipFailed` | N/A (consumer) | consumer: `ProjectZipHandlerService` | `Error to unzip file for project({})` |
+| [project/40010.md](project/40010.md) | 40010 | `ProjectZipUploadReject` | 400 | `ProjectService` | `Reject to upload zip file for project({}), please reset templates!` |
+| [project/40011.md](project/40011.md) | 40011 | `ProjectResetReject` | 400 | `ProjectService` | `Project({}) is processing, try to reset later.` |
+| [project/40012.md](project/40012.md) | 40012 | `ProjectIsDeploying` | 400 | `DeployService` | `Project({}) is deploying, try to deploy later.` |
 | `project/40013.md` ‡ | 40013 | `ProjectDeployInterruptedByPagerErrors` | N/A (consumer) | consumer: `ProjectDeployService` | `Project(({}) deploy is interuptted ` |
 | `project/40013.md` ‡ | 40013 | `ProjectIsWaitForDeploy` | 400 | `DeployService` | `Project({}) is wait for deploy now.` |
 
@@ -114,72 +114,72 @@ status).
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `language/50001.md` | 50001 | `LanguageExist` | 400 | `LanguageService` | `Language {} exist in project({}).` |
-| `language/50002.md` | 50002 | `LanguageNotExist` | 400 | `LanguageRepository` | `Language {} not exist in project({}).` |
-| `language/50003.md` | 50003 | `LanguageDefaultNotFound` | 500 as -9999 | `LanguageRepository` (reached from `NavigationListService` / `NavigationArticleService`) | `Default language not found in project({}).` |
+| [language/50001.md](language/50001.md) | 50001 | `LanguageExist` | 400 | `LanguageService` | `Language {} exist in project({}).` |
+| [language/50002.md](language/50002.md) | 50002 | `LanguageNotExist` | 400 | `LanguageRepository` | `Language {} not exist in project({}).` |
+| [language/50003.md](language/50003.md) | 50003 | `LanguageDefaultNotFound` | 500 as -9999 | `LanguageRepository` (reached from `NavigationListService` / `NavigationArticleService`) | `Default language not found in project({}).` |
 
 ### Template (60000) → `template/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `template/60001.md` | 60001 | `TemplateIdNotExist` | 400 | `TemplateRepository` | `Template id {} not exist.` |
+| [template/60001.md](template/60001.md) | 60001 | `TemplateIdNotExist` | 400 | `TemplateRepository` | `Template id {} not exist.` |
 | `template/60002.md` † | 60002 | `TemplateNoPrivilege` | — | — | `No privilege to access template({})` |
-| `template/60003.md` | 60003 | `TemplateNotBelongToProject` | 400 | `ArticleListService` | `Template({}) does not belong to project({}).` |
-| `template/60004.md` | 60004 | `TemplateNotTextFile` | 400 | `TemplateService` | `Template({}) is not a text file.` |
-| `template/60005.md` | 60005 | `TemplateNotBinaryFile` | 400 | `TemplateService` | `Template({}) is not a binary file.` |
-| `template/60006.md` | 60006 | `TemplateNameDuplicated` | 400 | `TemplateService` | `Template name {} is duplicated in the directory template({}).` |
-| `template/60007.md` | 60007 | `TemplateDirectoryRequired` | 400 | `TemplateService` | `Template({}) is not a directory.` |
-| `template/60008.md` | 60008 | `TemplateUploadFileSaveError` | 400 | `TemplateService` | `Error to save uploaded file for template({}).` |
-| `template/60009.md` | 60009 | `TemplateFileNotExist` | 400 | `TemplateService` | `Template file not exist for template({}).` |
-| `template/60010.md` | 60010 | `TemplateBinaryMetadataMissed` | 400 | `TemplateService` | `Metadata file for binary template({}) is missed.` |
-| `template/60011.md` | 60011 | `TemplateRenameReject` | 400 | `TemplateService` | `Cannot rename ROOT or RECYCLE_BIN template({})` |
-| `template/60012.md` | 60012 | `TemplateSameProjectRequired` | 400 | `TemplateService` | `The project of template({}) and target template({}) must be same.` |
+| [template/60003.md](template/60003.md) | 60003 | `TemplateNotBelongToProject` | 400 | `ArticleListService` | `Template({}) does not belong to project({}).` |
+| [template/60004.md](template/60004.md) | 60004 | `TemplateNotTextFile` | 400 | `TemplateService` | `Template({}) is not a text file.` |
+| [template/60005.md](template/60005.md) | 60005 | `TemplateNotBinaryFile` | 400 | `TemplateService` | `Template({}) is not a binary file.` |
+| [template/60006.md](template/60006.md) | 60006 | `TemplateNameDuplicated` | 400 | `TemplateService` | `Template name {} is duplicated in the directory template({}).` |
+| [template/60007.md](template/60007.md) | 60007 | `TemplateDirectoryRequired` | 400 | `TemplateService` | `Template({}) is not a directory.` |
+| [template/60008.md](template/60008.md) | 60008 | `TemplateUploadFileSaveError` | 400 | `TemplateService` | `Error to save uploaded file for template({}).` |
+| [template/60009.md](template/60009.md) | 60009 | `TemplateFileNotExist` | 400 | `TemplateService` | `Template file not exist for template({}).` |
+| [template/60010.md](template/60010.md) | 60010 | `TemplateBinaryMetadataMissed` | 400 | `TemplateService` | `Metadata file for binary template({}) is missed.` |
+| [template/60011.md](template/60011.md) | 60011 | `TemplateRenameReject` | 400 | `TemplateService` | `Cannot rename ROOT or RECYCLE_BIN template({})` |
+| [template/60012.md](template/60012.md) | 60012 | `TemplateSameProjectRequired` | 400 | `TemplateService` | `The project of template({}) and target template({}) must be same.` |
 
 ### Article List (70000) → `article_list/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `article_list/70001.md` | 70001 | `ArticleListIdNotExist` | 400 | `ArticleListRepository` | `Article list id {} not exist.` |
+| [article_list/70001.md](article_list/70001.md) | 70001 | `ArticleListIdNotExist` | 400 | `ArticleListRepository` | `Article list id {} not exist.` |
 | `article_list/70002.md` † | 70002 | `ArticleListNoPrivilege` | — | — | `No privilege to access article list({})` |
-| `article_list/70003.md` | 70003 | `ArticleListIdentifierExist` | 400 | `ArticleListService` | `Article list identifier {} exist in project({}).` |
+| [article_list/70003.md](article_list/70003.md) | 70003 | `ArticleListIdentifierExist` | 400 | `ArticleListService` | `Article list identifier {} exist in project({}).` |
 | `article_list/70004.md` † | 70004 | `ArticleListIdentifierNotExist` | — | — | `Article list identifier {} not exist in project({}).` |
-| `article_list/70005.md` | 70005 | `ArticleListTemplateFormatError` | 400 | `ArticleListService` | `Article template must be html.` |
-| `article_list/70006.md` | 70006 | `ArticleListProjectMismatching` | 400 | `ArticleListRepository` | `Article list and project is mismatching.` |
-| `article_list/70007.md` | 70007 | `ArticleListArticleMismatching` | 400 | `ArticleListService` | `Article list({}) and article({}) is mismatching, they must belong to a same project.` |
-| `article_list/70008.md` | 70008 | `ArticleListArticleExist` | 400 | `ArticleListService` | `Article list({}) contains article({}).` |
-| `article_list/70009.md` | 70009 | `ArticleListArticleNotExist` | 400 | `ArticleListService` | `Article list({}) does not contain article({}).` |
-| `article_list/70010.md` | 70010 | `ArticleDeleteRejectedDueToPagerListExisting` | 400 | `ArticleListService` | `Article list({}) cannot be deleted, because it was referenced by more that 1 templates.` |
+| [article_list/70005.md](article_list/70005.md) | 70005 | `ArticleListTemplateFormatError` | 400 | `ArticleListService` | `Article template must be html.` |
+| [article_list/70006.md](article_list/70006.md) | 70006 | `ArticleListProjectMismatching` | 400 | `ArticleListRepository` | `Article list and project is mismatching.` |
+| [article_list/70007.md](article_list/70007.md) | 70007 | `ArticleListArticleMismatching` | 400 | `ArticleListService` | `Article list({}) and article({}) is mismatching, they must belong to a same project.` |
+| [article_list/70008.md](article_list/70008.md) | 70008 | `ArticleListArticleExist` | 400 | `ArticleListService` | `Article list({}) contains article({}).` |
+| [article_list/70009.md](article_list/70009.md) | 70009 | `ArticleListArticleNotExist` | 400 | `ArticleListService` | `Article list({}) does not contain article({}).` |
+| [article_list/70010.md](article_list/70010.md) | 70010 | `ArticleDeleteRejectedDueToPagerListExisting` | 400 | `ArticleListService` | `Article list({}) cannot be deleted, because it was referenced by more that 1 templates.` |
 
 ### Article (80000) → `article/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `article/80001.md` | 80001 | `ArticleIdNotExist` | 400 | `ArticleRepository` | `Article id {} not exist.` |
-| `article/80002.md` | 80002 | `ArticleContentNotExist` | 400 | `ArticleService` | `Article content of article({}) not exist.` |
-| `article/80003.md` | 80003 | `ArticleCoverSaveError` | 400 | `ArticleService` | `Error to save cover file for article({}).` |
+| [article/80001.md](article/80001.md) | 80001 | `ArticleIdNotExist` | 400 | `ArticleRepository` | `Article id {} not exist.` |
+| [article/80002.md](article/80002.md) | 80002 | `ArticleContentNotExist` | 400 | `ArticleService` | `Article content of article({}) not exist.` |
+| [article/80003.md](article/80003.md) | 80003 | `ArticleCoverSaveError` | 400 | `ArticleService` | `Error to save cover file for article({}).` |
 
 ### Navigation (90000) → `navigation/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `navigation/90001.md` | 90001 | `NavigationIdNotExist` | 400 | `NavigationRepository` | `Navigation id {} not exist` |
-| `navigation/90002.md` | 90002 | `NavigationIdentifierDuplicated` | 400 | `NavigationListService`, `NavigationArticleService` | `Navigation identifier {} is duplicated in the parent navigation({}).` |
-| `navigation/90003.md` | 90003 | `NavigationArticleMismatching` | 400 | `NavigationArticleService` | `Navigation({}} and article({}) must belong to a same project` |
-| `navigation/90004.md` | 90004 | `NavigationArticleListMismatching` | 400 | `NavigationListService` | `Navigation({}} and article list({}) must belong to a same project` |
-| `navigation/90005.md` | 90005 | `NavigationTemplateMismatching` | 400 | `NavigationListService`, `NavigationArticleService` | `Navigation({}} and template({}) must belong to a same project` |
+| [navigation/90001.md](navigation/90001.md) | 90001 | `NavigationIdNotExist` | 400 | `NavigationRepository` | `Navigation id {} not exist` |
+| [navigation/90002.md](navigation/90002.md) | 90002 | `NavigationIdentifierDuplicated` | 400 | `NavigationListService`, `NavigationArticleService` | `Navigation identifier {} is duplicated in the parent navigation({}).` |
+| [navigation/90003.md](navigation/90003.md) | 90003 | `NavigationArticleMismatching` | 400 | `NavigationArticleService` | `Navigation({}} and article({}) must belong to a same project` |
+| [navigation/90004.md](navigation/90004.md) | 90004 | `NavigationArticleListMismatching` | 400 | `NavigationListService` | `Navigation({}} and article list({}) must belong to a same project` |
+| [navigation/90005.md](navigation/90005.md) | 90005 | `NavigationTemplateMismatching` | 400 | `NavigationListService`, `NavigationArticleService` | `Navigation({}} and template({}) must belong to a same project` |
 | `navigation/90006.md` ‡ | 90006 | `NavigationListLost` | N/A (consumer) | consumer: `ProjectDeployNavigationExtension` | `Navigation list of navigation({}) lost.` |
 | `navigation/90006.md` ‡ | 90006 | `NavigationArticleLost` | N/A (consumer) | consumer: `ProjectDeployNavigationExtension` | `Navigation article of navigation({}) lost.` |
-| `navigation/90007.md` | 90007 | `NavigationDeleteRejectWithChildren` | 400 | `NavigationService` | `Navigation({}) with children navigations cannot be deleted.` |
-| `navigation/90008.md` | 90008 | `NavigationRootDeleteReject` | 400 | `NavigationService` | `Root navigation({}) cannot be deleted.` |
+| [navigation/90007.md](navigation/90007.md) | 90007 | `NavigationDeleteRejectWithChildren` | 400 | `NavigationService` | `Navigation({}) with children navigations cannot be deleted.` |
+| [navigation/90008.md](navigation/90008.md) | 90008 | `NavigationRootDeleteReject` | 400 | `NavigationService` | `Root navigation({}) cannot be deleted.` |
 
 ### Deploy Task (11000) → `deploy_task/`
 
 | Doc | Code | Enum Constant | HTTP | Thrown from | Message |
 | --- | --- | --- | --- | --- | --- |
-| `deploy_task/11001.md` | 11001 | `DeployTaskIdNotExist` | N/A (consumer) | `DeployTaskRepository` (only reached from the consumer) | `Deploy task id {} not exist.` |
-| `deploy_task/11002.md` | 11002 | `DeployTaskSkipDueToStarted` | N/A (consumer) | consumer: `ProjectDeployService` | `Deploy task({}) skipped, because it was started, current state is {}, cannot be ran again.` |
-| `deploy_task/11003.md` | 11003 | `DeployTaskSkipDueToNoTemplate` | N/A (consumer) | consumer: `ProjectDeployService` | `Deploy task({}) skipped, because the template of the project({}) is not ready.` |
-| `deploy_task/11004.md` | 11004 | `DeployDirectoryError` | N/A (consumer) | consumer: `ProjectDeployService` | `Error to find or create a deploy directory for project({})` |
+| [deploy_task/11001.md](deploy_task/11001.md) | 11001 | `DeployTaskIdNotExist` | N/A (consumer) | `DeployTaskRepository` (only reached from the consumer) | `Deploy task id {} not exist.` |
+| [deploy_task/11002.md](deploy_task/11002.md) | 11002 | `DeployTaskSkipDueToStarted` | N/A (consumer) | consumer: `ProjectDeployService` | `Deploy task({}) skipped, because it was started, current state is {}, cannot be ran again.` |
+| [deploy_task/11003.md](deploy_task/11003.md) | 11003 | `DeployTaskSkipDueToNoTemplate` | N/A (consumer) | consumer: `ProjectDeployService` | `Deploy task({}) skipped, because the template of the project({}) is not ready.` |
+| [deploy_task/11004.md](deploy_task/11004.md) | 11004 | `DeployDirectoryError` | N/A (consumer) | consumer: `ProjectDeployService` | `Error to find or create a deploy directory for project({})` |
 
 ## Duplicated codes (‡) — backend fix required before those docs land
 
