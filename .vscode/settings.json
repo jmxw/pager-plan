@@ -1,0 +1,7 @@
+{
+  // Markdown Preview Enhanced: render ```plantuml blocks (incl. @startsalt wireframes) via an
+  // online PlantUML server, so no local plantuml.jar / Java is required for local preview.
+  // The published MkDocs site renders PlantUML separately (plantuml-markdown plugin + server,
+  // see mkdocs.yml) — this setting only affects the in-editor preview.
+  "markdown-preview-enhanced.plantumlServer": "https://kroki.io/plantuml/svg/"
+}

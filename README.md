@@ -1,69 +1,169 @@
-# Pager CMS
+# Pager Plan
 
-Pager CMS是一款完全**基于云服务的次世代建站工具**，它可以帮助网站开发商降低开发部署成本，提升网站安全性，以及网站终端用户体验。
+Design and implementation plans for **Pager** — a SaaS, cloud-based website builder / CMS.
 
-## Pager CMS概要
+Pager lets website developers build sites from templates, render them to static pages served
+from a CDN, and back the dynamic parts (message boards, forms, …) with shared microservices —
+so developers don't buy or operate their own servers. Content editing, template authoring, and
+publishing all happen in an online CMS.
 
-### 项目背景
+This repository holds **specifications only** — there is no application code here, nothing
+to build, and nothing to run. Each Markdown file is a self-contained plan that describes a
+single feature in enough detail to implement it directly: scope, data model, API endpoints,
+module-by-module changes, and implementation order. The plans are authored against the
+`pager-backend` and `pager-frontend` codebases (linked under `source/`, see below) so they can
+be written, reviewed, and tracked independently of the code.
 
-当前针对企业或者个人用户的建站方式主要有以下几种：
-- 完全自主开发：包括网站的前端和后端
-- 使用CMS系统针对页面进行高度定制化
-- 完全使用云服务，比如阿里云建站
+## Reading the plans
 
-针对这三种方案，现有的解决方案优缺点如下：
-| 方案 | 优点 | 缺点 |
-| --- | --- | --- |
-| 自主开发 | 针对特殊需求特殊定制 | 开发时间长，成本高 |
-| CMS | 可以满足绝大部分需求，可以针对页面进行高度定制化 | 现有CMS系统多为PHP，容易被攻击，需要开发商自己部署，用户体验差，运维风险高（数据丢失），针对部分特殊需求（比如微信公众号同步）暂时解决方案比较少 |
-| 云服务 | 开发成本低，不需要运维，可靠性高，不用担心被攻击 | 基本没有什么定制化的空间，只能简单针对页面定制，价格偏贵，没有数据的控制权 |
+The plans are published as a searchable site via GitHub Pages —
+**https://jmxw.github.io/pager-plan/** — with a sidebar grouped by release, full-text search,
+and rendered mermaid diagrams. It rebuilds automatically on every push to `master`
+(see [the docs workflow](https://github.com/jmxw/pager-plan/blob/master/.github/workflows/docs.yml)).
 
-这三个方案里面，其中自主开发，完全是对项目进行定制，其实无法做成产品做大来推广。
-云服务这种方案，基本被头部厂商，比如阿里，腾讯等把控，没有什么入场机会。
-CMS这种方案，之所以能够成为产品，是因为目前国内有大量的中小企业从事建站服务，这样的开发商为他们的客户开发页面高度定制化的网站，必须使用能够针对页面进行高度定制化的CMS系统来开发。
-针对这种方案，可以做出比市场上现有产品要好的产品和服务，逐渐去推广。
+To preview the site locally, in a virtual environment:
 
-### 项目契机
-当前国内建站最多的CMS系统DedeCMS针对所有用户收费，一个网站5800，很多老网站大量往其他平台，比如WordPress，帝国，pboot等CMS转移。
-然而，这些PHP的平台依然无法解决CMS建站中的一些问题
-容易被攻击：PHP很多还停留在5.x，本身就容易被攻击，很多建站的企业还疏于更新源程序（或者本身源程序被魔改过，要处理冲突也没法去改）
-运维成本高：PHP本身要部署在服务器上，开发商要自己去买服务器买流量或者带宽，有的CMS还依赖数据库，还要有专门的人来管服务器和数据库，做好定期备份
-终端用户体验差：因为成本的限制，这种网站，基本都是单服务器，没法保证高可用性，和访问链路的通畅，终端用户访问的时候打开速度不理想。
-针对这一现状，本项目，以下暂定成为Pager CMS，简称Pager，拟定开发一款软件即服务（以下简称SaaS）的CMS，改CMS具有以下特征：
+```bash
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements-docs.txt
+mkdocs serve                       # serves http://127.0.0.1:8000
+```
 
-- 开发商不用自行购买服务器和数据库，只用买Pager的建站资源
-- Pager尽量使用模板生成静态页面，直接把页面部署到CDN，提升用户体验
-- 特殊需求比如留言板等需要后端服务的功能，通过集约化的微服务，面向所有终端用户提供服务
-- Pager提供在线编辑和开发工具，开发商无需在本地调试，降低开发环境搭建和维护成本
-- Pager提供模板商城，开发商可以挑选半成品模板直接建站（类似AB模板网）
+`.venv/` is gitignored. Next time just `source .venv/bin/activate && mkdocs serve`.
 
-### 收费模式
-Pager支持两种收费模式，一种就是SaaS，买软件服务，第二种就是卖授权，然后自己部署（self hosted）或者我们来帮助部署。
-这点类似于Github的官网版和企业self host自建版，针对这两个模式
+The site is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) from
+`mkdocs.yml`. MkDocs follows symlinks while scanning, so the build is scoped to a small
+`docs/` folder of symlinks to `plan/` (which holds `release/` and `common/`), the `rules/` and
+`doc/` folders, plus the top-level docs — which keeps it from crawling the large `source/`
+code-repo symlinks. You can also just browse the files on GitHub, which renders Markdown and
+mermaid in the file view.
 
-- SaaS
-  - 卖模板
-  - 建站工具：每一个网站的建站工具收取相应费用，或者工具免费
-  - 存储费用
-  - 流量费用，也可以按带宽付费？？
-- self hosted
-  - 按年来付软件使用授权
-  - 部署费用
-  - 运维费用
+## What the plans target
 
-### 用户群体
-用户群体主要有以下四大类
+The plans describe changes to a two-part application:
 
-| 用户 | 权限 | 说明 |
-| --- | --- | --- |
-| 终端用户 | 访问网页，访问微服务（比如提交留言板等）| 用户访问存在CND上生成的静态页面网站，用户访问各个功能的微服务（比如留言板），提交留言板的时候直接提交请求到留言板的微服务，请求带有网站的id |
-| 网站使用者（企业或个人） | 访问CMS系统，访问微服务（比如查看留言板等） | 网站使用者可以访问CMS来设置网站的文章和内容，能设置的部分由网站开发者指定 |
-| 网站开发商 | 访问CMS系统，添加用户，编辑模板，发布网页 | 网站开发商可以创建网站项目，添加用户和权限，编辑网页的模板，指定网站使用者可以编辑的内容 |
-| 模板开发商 | 访问CMS系统，创建编辑模板，分享模板	 |  |
+- **Backend** — Kotlin + Spring Boot, organized as a multi-module project:
+  `domain` (JPA entities, repositories, DAOs, services, security, RabbitMQ/OSS components) ·
+  `app/cms` (REST API for content management, port 8080) · `app/consumer` (RabbitMQ worker that
+  processes deployment events — unpacks ZIP artifacts, precompiles content, deploys to OSS,
+  port 8081) · `lib/oss` (Aliyun OSS wrapper). Persistence is MySQL (JPA/Hibernate); async work
+  runs over RabbitMQ; generated static sites and assets live in Aliyun OSS. Auth is JWT with a
+  custom `@Permitted(UserPermission.X)` annotation; the role hierarchy is
+  OWNER > ADMIN > DEVELOPER > CUSTOMER. Package base: `com.xwkj.pager` (domain / consumer),
+  `com.xwkj.cms` (CMS app).
+- **Frontend** — Vue 3 (Composition API) + Vuex 4 + Vue Router 4 + Element Plus, built with
+  Vue CLI, and an OpenAPI-generated API client (`make openapi`). Built on the VAB
+  (Vue Admin Beautiful / admin-plus) template framework. UI copy is bilingual via Vue I18n
+  (`zh` default, `en`).
 
+A backend plan and its frontend counterpart are written as separate files (see naming below).
 
-## Pager CMS功能文档
+## Layout
 
-- 文章列表
-- 文章分页
-- 文章详情
+```
+pager-plan/
+├── plan/                Plan content; the folder the code repos symlink in (see below)
+│   ├── common/          Shared reference docs cited by multiple plans (e.g. the Pager
+│   │                    template-tag reference: {pager:list}, [list:*], [page:*], …)
+│   └── release/         Plans grouped by the release they ship in
+│       ├── 1.0/            Initial feature set
+│       └── feature/        Parking lot for plans not yet assigned to a release
+├── rules/               Doc-authoring rules (how to write these specs) — see rules/README.md
+│   ├── api_docs.md         How to document API endpoints
+│   ├── backend_errors.md   How to document backend error codes
+│   ├── common_rules.md     Cross-cutting authoring rules (linking, voice, …)
+│   ├── permissions.md      How to document UserPermission values
+│   ├── tech_noun.md        Domain-term terminology rules
+│   ├── validation.md       How to document field validation
+│   └── spec/               Spec templates & examples (template.md, functions.md, design.md, …)
+└── doc/                 Reference docs, cross-linked from plans (root-absolute `/doc/...` links)
+    ├── api/             One doc per API endpoint, grouped by controller
+    ├── backend_error/   One doc per backend error code, grouped by category
+    ├── permission/      One doc per `UserPermission` value
+    ├── security/        Security audit findings (backend / frontend)
+    ├── spec/            Spec index — the master catalog of Pager CMS screens
+    └── tech_noun/       Domain-term definitions — the source of terminology for all docs
+```
+
+`rules/` holds the **authoring conventions** for these specs (how to write an API doc, an error
+doc, a permission doc, a spec — the templates and the linking/voice rules). `doc/` holds the
+**cross-cutting reference material itself** (the actual API endpoints, backend error codes,
+permissions, the security audit, and the domain tech-noun glossary) produced by following those
+rules. Plans and docs link into `doc/` with **root-absolute** paths (`/doc/...`), the same
+convention used for the `source/` code links; both `rules/` and `doc/` render on the site through
+their own `docs/` symlinks.
+
+All plans live under `plan/` so that the code repos can symlink **just that subfolder**
+rather than the whole repository. The repo root also holds the `source/pager-backend` and
+`source/pager-frontend` symlinks back to the code repos (see below); nesting everything under
+`plan/` keeps those out of what the code repos see, which avoids a symlink reference cycle
+(`source/pager-backend → pager-backend → plan → pager-plan → source/pager-backend`).
+
+## File naming conventions
+
+Within each release folder, one feature usually spans two files:
+
+| Suffix | Meaning |
+|---|---|
+| `<feature>.md` or `<feature>-be.md` | Backend plan |
+| `<feature>-fe.md` | Frontend plan |
+
+Some older plans use `-backend` / `-frontend` instead of `-be` / `-fe`. Multi-step features
+use an umbrella file plus numbered steps (e.g. `deploy.md` + `deploy-step1.md` … `-stepN.md`);
+the umbrella tracks per-step status. Schema migrations are embedded in the backend plan, not
+added as separate `.sql` files.
+
+## Plan structure
+
+Plans are not rigidly templated, but most follow this shape:
+
+- **Overview / Goal** — what the feature does and why.
+- **Scope** — operations and constraints, often as tables.
+- **API Endpoints** — method, path, function name, permission, description.
+- **Module Changes** — concrete changes per backend module (error codes, DAOs, DTOs,
+  service methods, controller endpoints) with Kotlin snippets; or per frontend file
+  (API modules, routes, views) with snippets and wireframes.
+- **Implementation Order** and **Summary of New / Modified Files**.
+
+## Code repo setup
+
+Plans reference real modules, files, endpoints, and error codes in the backend and frontend
+codebases, so it helps to have both checked out alongside this repo and reachable via local
+symlinks under `source/` (`source/pager-backend`, `source/pager-frontend`). The whole `source/`
+folder is gitignored.
+
+```bash
+# 1. Clone the code repos to any local paths you prefer
+git clone https://github.com/jmxw/pager.git       ~/Documents/IdeaProjects/pager-backend
+git clone https://github.com/jmxw/pager-front.git  ~/Documents/WebstormProjects/pager-frontend
+
+# 2. From the root of this repo, create the symlinks under source/ (use the paths from step 1)
+mkdir -p source
+ln -s ~/Documents/IdeaProjects/pager-backend     source/pager-backend
+ln -s ~/Documents/WebstormProjects/pager-frontend source/pager-frontend
+
+# 3. Verify
+ls source/pager-backend    # should show the backend project (app/, domain/, lib/, …)
+ls source/pager-frontend   # should show the frontend project (src/, package.json, …)
+```
+
+> The backend GitHub repo is named `pager` and the frontend repo is named `pager-front`; the
+> local checkout directories (`pager-backend` / `pager-frontend`) and the `source/` symlink names
+> are what the plans reference throughout.
+
+The two code repos do the inverse — each surfaces this repo's `plan/` subfolder at their own
+`plan/` via the same symlink trick (`ln -s ~/Documents/Projects/pager-plan/plan plan`), so paths
+like `plan/release/1.0/...` resolve from either side. They symlink the `plan/` **subfolder**,
+not the repo root — that's what avoids the `source/` ↔ `plan` reference cycle described above.
+
+## Working in this repo
+
+- Add a new plan to the folder for the release it ships in (or `plan/release/feature/` if
+  undecided), following the naming conventions above.
+- Keep backend and frontend concerns in separate files.
+- Plans should be detailed enough to implement against the `pager-backend` / `pager-frontend`
+  codebases without further design work — name real modules, files, endpoints, and error codes.
+- Follow the authoring conventions in [rules/README.md](rules/README.md).
+
+See [CLAUDE.md](CLAUDE.md) for guidance aimed at Claude Code.

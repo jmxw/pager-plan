@@ -1,0 +1,6 @@
+# Docs site toolchain (MkDocs Material). Used by .github/workflows/docs.yml
+# and for local preview:  pip install -r requirements-docs.txt && mkdocs serve
+mkdocs-material>=9.5,<10
+# Renders ```plantuml blocks (PlantUML + Salt wireframes) via the public PlantUML server
+# (configured in mkdocs.yml). Diagram source is sent to www.plantuml.com at build time.
+plantuml-markdown>=3.11,<4

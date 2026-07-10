@@ -1,0 +1,89 @@
+site_name: Pager Plan
+site_description: Design and implementation plans for Pager (SaaS website builder / CMS)
+site_url: https://jmxw.github.io/pager-plan/
+repo_url: https://github.com/jmxw/pager-plan
+repo_name: jmxw/pager-plan
+edit_uri: edit/master/
+
+# The plans live under plan/ (plan/release/, plan/common/). The published site is
+# assembled from docs/, which symlinks plan/, rules/, and doc/ plus the two top-level
+# docs (index.md -> README.md, CLAUDE.md). Scoping docs_dir to docs/ rather than the
+# repo root keeps MkDocs from walking the large source/ code-repo symlinks
+# (MkDocs follows symlinks during its file scan).
+docs_dir: docs
+site_dir: site
+
+# Link validation: /source/... and /doc/... root-absolute links are an intentional
+# convention (see CLAUDE.md), so don't log them. not_found is downgraded to info so a
+# broken cross-link warns (visible in the build log) but never blocks a deploy.
+validation:
+  links:
+    absolute_links: ignore
+    not_found: info
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tooltips
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Renders ```plantuml fenced blocks (incl. @startsalt wireframes) via the public PlantUML
+  # server at build time. Its preprocessor runs at priority 30 (> SuperFences), so it claims
+  # plantuml fences before SuperFences sees them — no custom_fences entry needed.
+  - plantuml_markdown:
+      server: https://www.plantuml.com/plantuml
+      format: svg
+      # Cache rendered diagrams on disk keyed by source; without this every build re-renders
+      # all diagrams against the public server (many HTTP round-trips per build).
+      cachedir: .plantuml-cache
