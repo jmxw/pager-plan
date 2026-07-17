@@ -17,9 +17,9 @@ a project's templates and navigation is governed separately by `PROJECT_DEV`, an
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/project` | ⬜ [add_project.md](/doc/api/project/add_project.md) |
-| PUT | `/v1/project/{projectId}` | ⬜ [edit_project.md](/doc/api/project/edit_project.md) |
-| DELETE | `/v1/project/{projectId}` | ⬜ [delete_project.md](/doc/api/project/delete_project.md) |
-| POST | `/v1/project/{projectId}/language` | ⬜ [add_project_language.md](/doc/api/project/add_project_language.md) |
-| POST | `/v1/project/{projectId}/upload_zip` | ⬜ [upload_zip.md](/doc/api/project/upload_zip.md) |
-| PATCH | `/v1/project/{projectId}/reset` | ⬜ [reset_project.md](/doc/api/project/reset_project.md) |
+| POST | `/v1/project` | [add_project.md](/doc/api/project/add_project.md) |
+| PUT | `/v1/project/{projectId}` | [edit_project.md](/doc/api/project/edit_project.md) |
+| DELETE | `/v1/project/{projectId}` | [delete_project.md](/doc/api/project/delete_project.md) |
+| POST | `/v1/project/{projectId}/language` | [add_project_language.md](/doc/api/project/add_project_language.md) |
+| POST | `/v1/project/{projectId}/upload_zip` | [upload_zip.md](/doc/api/project/upload_zip.md) |
+| PATCH | `/v1/project/{projectId}/reset` | [reset.md](/doc/api/project/reset.md) |

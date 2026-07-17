@@ -15,7 +15,7 @@ site.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/article` | ⬜ [add_article.md](/doc/api/article/add_article.md) |
-| PUT | `/v1/article/{articleId}` | ⬜ [edit_article.md](/doc/api/article/edit_article.md) |
-| DELETE | `/v1/article/{articleId}` | ⬜ [delete_article.md](/doc/api/article/delete_article.md) |
-| POST | `/v1/article/{articleId}/cover` | ⬜ [upload_article_cover.md](/doc/api/article/upload_article_cover.md) |
+| POST | `/v1/article` | [add_article.md](/doc/api/article/add_article.md) |
+| PUT | `/v1/article/{articleId}` | [edit_article.md](/doc/api/article/edit_article.md) |
+| DELETE | `/v1/article/{articleId}` | [delete_article.md](/doc/api/article/delete_article.md) |
+| POST | `/v1/article/{articleId}/cover` | [upload_article_cover.md](/doc/api/article/upload_article_cover.md) |
