@@ -17,4 +17,4 @@ and is therefore not gated by this permission.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| PATCH | `/v1/project/{projectId}/deploy/{phase}` | ⬜ [deploy_project.md](/doc/api/project/deploy_project.md) |
+| PATCH | `/v1/project/{projectId}/deploy/{phase}` | [deploy.md](/doc/api/project/deploy.md) |

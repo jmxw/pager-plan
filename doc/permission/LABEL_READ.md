@@ -17,4 +17,4 @@ role's `UserRole.permissions` set.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| GET | `/v1/label/{labelId}` | ⬜ [get_label.md](/doc/api/label/get_label.md) |
+| GET | `/v1/label/{labelId}` | [get_label.md](/doc/api/label/get_label.md) |
