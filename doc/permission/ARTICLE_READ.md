@@ -16,6 +16,6 @@ items is governed by [`ARTICLE_LIST_READ`](ARTICLE_LIST_READ.md).
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/article/search` | ⬜ [search_articles.md](/doc/api/article/search_articles.md) |
-| GET | `/v1/article/{articleId}` | ⬜ [get_article.md](/doc/api/article/get_article.md) |
-| POST | `/v1/article_list/search` | ⬜ [search_article_lists.md](/doc/api/article_list/search_article_lists.md) |
+| POST | `/v1/article/search` | [search_articles.md](/doc/api/article/search_articles.md) |
+| GET | `/v1/article/{articleId}` | [get_article.md](/doc/api/article/get_article.md) |
+| POST | `/v1/article_list/search` | [search_article_lists.md](/doc/api/article_list/search_article_lists.md) |

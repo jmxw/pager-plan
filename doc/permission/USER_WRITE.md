@@ -15,7 +15,7 @@ separately by `ADMIN_WRITE` (OWNER only).
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/user/developer` | ⬜ [add_developer.md](/doc/api/user/add_developer.md) |
-| POST | `/v1/user/customer` | ⬜ [add_customer.md](/doc/api/user/add_customer.md) |
-| PATCH | `/v1/user/{userId}` | ⬜ [edit_user.md](/doc/api/user/edit_user.md) |
-| DELETE | `/v1/user/{userId}` | ⬜ [delete_user.md](/doc/api/user/delete_user.md) |
+| POST | `/v1/user/developer` | [add_developer.md](/doc/api/user/add_developer.md) |
+| POST | `/v1/user/customer` | [add_customer.md](/doc/api/user/add_customer.md) |
+| PATCH | `/v1/user/{userId}` | [edit_user.md](/doc/api/user/edit_user.md) |
+| DELETE | `/v1/user/{userId}` | [delete_user.md](/doc/api/user/delete_user.md) |

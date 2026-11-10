@@ -15,4 +15,4 @@ manage developers and customers through `USER_WRITE` but cannot mint further adm
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/user/admin` | ⬜ [add_admin.md](/doc/api/user/add_admin.md) |
+| POST | `/v1/user/admin` | [add_admin.md](/doc/api/user/add_admin.md) |

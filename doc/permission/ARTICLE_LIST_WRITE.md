@@ -15,8 +15,8 @@ an article from a list. An article list is the predefined collection a `{pager:l
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/article_list` | ⬜ [add_article_list.md](/doc/api/article_list/add_article_list.md) |
-| PUT | `/v1/article_list/{articleListId}` | ⬜ [edit_article_list.md](/doc/api/article_list/edit_article_list.md) |
-| DELETE | `/v1/article_list/{articleListId}` | ⬜ [delete_article_list.md](/doc/api/article_list/delete_article_list.md) |
-| PATCH | `/v1/article_list/{articleListId}/article/{articleId}` | ⬜ [add_article_to_list.md](/doc/api/article_list/add_article_to_list.md) |
-| DELETE | `/v1/article_list/{articleListId}/article/{articleId}` | ⬜ [delete_article_from_list.md](/doc/api/article_list/delete_article_from_list.md) |
+| POST | `/v1/article_list` | [add_article_list.md](/doc/api/article_list/add_article_list.md) |
+| PUT | `/v1/article_list/{articleListId}` | [edit_article_list.md](/doc/api/article_list/edit_article_list.md) |
+| DELETE | `/v1/article_list/{articleListId}` | [delete_article_list.md](/doc/api/article_list/delete_article_list.md) |
+| PATCH | `/v1/article_list/{articleListId}/article/{articleId}` | [add_article_to_list.md](/doc/api/article_list/add_article_to_list.md) |
+| DELETE | `/v1/article_list/{articleListId}/article/{articleId}` | [delete_article_from_list.md](/doc/api/article_list/delete_article_from_list.md) |

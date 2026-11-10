@@ -18,8 +18,8 @@ require adding `LABEL_WRITE` to a role's `UserRole.permissions` set.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| POST | `/v1/label` | ⬜ [add_label.md](/doc/api/label/add_label.md) |
-| PUT | `/v1/label/{labelId}` | ⬜ [edit_label.md](/doc/api/label/edit_label.md) |
-| DELETE | `/v1/label/{labelId}` | ⬜ [delete_label.md](/doc/api/label/delete_label.md) |
-| POST | `/v1/label/{labelId}/content/{languageType}` | ⬜ [add_or_update_label_content.md](/doc/api/label/add_or_update_label_content.md) |
-| DELETE | `/v1/label/{labelId}/content/{languageType}` | ⬜ [delete_label_content.md](/doc/api/label/delete_label_content.md) |
+| POST | `/v1/label` | [add_label.md](/doc/api/label/add_label.md) |
+| PUT | `/v1/label/{labelId}` | [edit_label.md](/doc/api/label/edit_label.md) |
+| DELETE | `/v1/label/{labelId}` | [delete_label.md](/doc/api/label/delete_label.md) |
+| POST | `/v1/label/{labelId}/content/{languageType}` | [add_or_update_label_content.md](/doc/api/label/add_or_update_label_content.md) |
+| DELETE | `/v1/label/{labelId}/content/{languageType}` | [delete_label_content.md](/doc/api/label/delete_label_content.md) |

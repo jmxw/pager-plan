@@ -1,0 +1,61 @@
+# DELETE /v1/label/{labelId}
+
+> Controller: LabelController
+
+Delete a label.
+
+**Stub endpoint** — the handler body is empty: no [label](/doc/tech_noun/TN0303_label.md) is
+deleted and no service is called. This doc records the declared surface; it is extended together
+with the implementation (same-PR sync rule).
+
+## Permission
+
+[`LABEL_WRITE`](/doc/permission/LABEL_WRITE.md) — currently granted to **no role**, so every call
+is rejected with [20002 UserNotPermitted](/doc/backend_error/user/20002.md) today.
+
+## Request
+
+### Path Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `labelId` | Long | Id of the [label](/doc/tech_noun/TN0303_label.md) to delete. |
+
+### Query Parameters
+
+N/A
+
+### Body
+
+N/A
+
+## Response
+
+DTO: `EmptyResponse`, returned inside the `PagerResponse` envelope as `data` — see the
+[API index](/doc/api/README.md#response-envelope).
+
+| Field | Type | Description |
+| --- | --- | --- |
+| — | — | `data` is an empty object. |
+
+## Errors
+
+| Case | HTTP Status | Error Code |
+| --- | --- | --- |
+| The caller's role does not hold `LABEL_WRITE` (currently every role) | 400 | [20002 UserNotPermitted](/doc/backend_error/user/20002.md) |
+
+A missing or invalid JWT is answered with `401 Unauthorized` (empty body) before the handler runs.
+
+## Example
+
+Request: N/A (no body)
+
+Success response (unreachable until a role grants the permission):
+
+```json
+{
+  "code": 200,
+  "timestamp": 1752700000000,
+  "data": {}
+}
+```

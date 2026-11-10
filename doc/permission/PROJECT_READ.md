@@ -16,8 +16,8 @@ any authenticated user can view the projects they belong to.
 
 | Method | Path | Endpoint Doc |
 | --- | --- | --- |
-| GET | `/v1/project` | ⬜ [get_projects.md](/doc/api/project/get_projects.md) |
-| GET | `/v1/project/regions` | ⬜ [get_project_available_regions.md](/doc/api/project/get_project_available_regions.md) |
-| GET | `/v1/project/language_types` | ⬜ [get_project_available_language_types.md](/doc/api/project/get_project_available_language_types.md) |
-| GET | `/v1/project/{projectId}` | ⬜ [get_project.md](/doc/api/project/get_project.md) |
-| GET | `/v1/project/{projectId}/language` | ⬜ [get_project_languages.md](/doc/api/project/get_project_languages.md) |
+| GET | `/v1/project` | [get_projects.md](/doc/api/project/get_projects.md) |
+| GET | `/v1/project/regions` | [get_project_available_regions.md](/doc/api/project/get_project_available_regions.md) |
+| GET | `/v1/project/language_types` | [get_project_available_language_types.md](/doc/api/project/get_project_available_language_types.md) |
+| GET | `/v1/project/{projectId}` | [get_project.md](/doc/api/project/get_project.md) |
+| GET | `/v1/project/{projectId}/language` | [get_project_languages.md](/doc/api/project/get_project_languages.md) |
